@@ -20,64 +20,70 @@ Or install it yourself as:
 
     $ gem install netcash_api
 
-## Direct Debit Orders
+## Bank Account Validation
 
-### Generate batch file
+#### METHOD /ValidateBankAccount
 
+```ruby
+netcash_params = {
+  service_key: ENV['VALIDATIONS_SERVICE_KEY'],
+  account_number: 123456789,
+  branch_code: 632005,
+  account_type: 1
+}
+
+NetcashApi::Validation.validate_bank_account(netcash_params) do |response|
+  p response.body
+  # => {:validate_bank_account_response=>{:validate_bank_account_result=>"0", :@xmlns=>"http://tempuri.org/"}}
+end
+```
+
+## Standard Debit Order
+
+#### Generate a batch file
 To generate a batch file you will need a list of transactions. The transactions are based on the format supplied here: [Offical Netcash Doc](https://api.netcash.co.za/inbound-payments/standard-debit-orders/)
 
 ```ruby
-
 transactions = [
   {
-    account_name: nil,
-    account_active: nil,
-    delete_this_account: nil,
-    banking_detail_type: nil,
-    bank_account_name: nil,
-    bank_account_type: nil,
-    branch_code: nil,
-    filler: nil,
-    bank_account_number: nil,
-    masked_credit_card_number: nil,
-    default_debit_amount: nil,
-    amount: nil,
-    email_address: nil,
-    mobile_number: nil,
-    debit_masterfile_group: nil,
-    extra_1: nil,
-    extra_2: nil,
-    extra_3: nil,
-    resubmit_unpaids_via_pay_now: nil
+    account_reference: 1,
+    account_name: 'Test Account',
+    banking_detail_type: 1,
+    bank_account_name: 'Test Bank Account',
+    bank_account_type: 1,
+    branch_code: 632005,
+    bank_account_number: 123456789,
+    amount: 50000
   }
 ]
+
+batch_file_upload = NetcashApi::BatchFileUpload::File.new(
+  service_key: ENV['DIRECT_DEBIT_SERVICE_KEY'],
+  software_vendor_key: ENV['SOFTWARE_VENDOR_KEY'],
+  batch_identifier: 1234,
+  transactions: transactions
+)
+
+p batch_file_upload.batch_file_upload
+# =>
+# H SOFTWARE_VENDOR_KEY	1	SameDay	123	20200701	DIRECT_DEBIT_SERVICE_KEY
+# K	101	102	131	132	133	134	135	136	162
+# T	670	Test Account  1	Test Bank Account	1	632005	0	123456789	50000
+# F	5	50000	9999
+
 ```
+*** The key row will be generated based on the columns supplied.*
 
-You will also need to supply a key row, which is an array of all columns that will be used in the file. Any of the above fields can be selected.
-
-**E.g.**
+#### METHOD /BatchFileUpload
 
 ```ruby
-key_row = [
-    :account_name,
-    :bank_account_name,
-    :bank_account_type,
-    :branch_code,
-    :bank_account_number,
-    :amount
-]
-```
-
-Lastly, you will need your service key
-```ruby
-batch_file = NetcashApi::Nif::BatchFileUpload.new(
-  service_key: NIF_SERVICE_KEY,
-  software_vendor_key: SOFTWARE_VENDOR_KEY,
-  batch_identifier: UNIQUE_BATCH_ID,
-  transactions: transactions,
-  key_rows: key_rows
-).generate_file
-
+NetcashApi::StandardDebitOrder.batch_file_upload(
+  service_key: ENV['DIRECT_DEBIT_SERVICE_KEY'],
+  file: batch_file_upload.batch_file
+) do |response, file|
+  p response.inspect
+  p file
+end
 ```
 
 ## Contributing

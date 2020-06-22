@@ -1,5 +1,0 @@
-H  d930eccd-3a6c-40b5-a611-831a72d012c4 1  TwoDay   My Test Batch  20201006  24ade73c-98cf-47b3-99be-cc7b867b3080
-K  101   102   131   132   133   134   135   136   162
-T  CUS001    A Customer  1  AB Customer    1  632005  0    40600000004 110200
-T  CUS002    X Customer  1  X Customer  2  198765  0    2060000001   200000
-F  2  310200  9999

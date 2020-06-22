@@ -1,4 +1,4 @@
-module NetcashApi::Nif::BatchFile
+module NetcashApi::BatchFileUpload
   class Footer
 
     attr_accessor :total_amount,

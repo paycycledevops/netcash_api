@@ -1,15 +1,15 @@
-module NetcashApi::Nif::BatchFile
+module NetcashApi::BatchFileUpload
   class KeyRecord
     ROW_IDENTIFIER ='K'
 
-    attr_accessor :key_rows
+    attr_accessor :transactions
 
-    def initialize(key_rows:)
-      @key_rows = key_rows
+    def initialize(transactions:)
+      @transactions = transactions
     end
 
     def row
-      r = key_rows.map { |kr| keys[kr] }
+      r = transactions.first.map { |k, v| keys[k] }
       [ ROW_IDENTIFIER ] + r
     end
 
