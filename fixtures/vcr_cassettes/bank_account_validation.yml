@@ -1,0 +1,167 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws.netcash.co.za/NIWS/NIWS_Validation.svc?wsdl
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '8877'
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Server:
+      - Microsoft-IIS/8.5
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Mon, 29 Jun 2020 17:39:26 GMT
+      Set-Cookie:
+      - cookiesession1=32A38373YALFPDBAMBAK091AGEN8016D;Path=/;HttpOnly
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><wsdl:definitions name="NIWS_Validation"
+        targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+        xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+        xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+        xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+        xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+        xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing"
+        xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"><wsp:Policy wsu:Id="BasicHttpBinding_INIWS_Validation_policy"><wsp:ExactlyOne><wsp:All><sp:TransportBinding
+        xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy"><wsp:Policy><sp:TransportToken><wsp:Policy><sp:HttpsToken
+        RequireClientCertificate="false"/></wsp:Policy></sp:TransportToken><sp:AlgorithmSuite><wsp:Policy><sp:Basic256/></wsp:Policy></sp:AlgorithmSuite><sp:Layout><wsp:Policy><sp:Strict/></wsp:Policy></sp:Layout></wsp:Policy></sp:TransportBinding></wsp:All></wsp:ExactlyOne></wsp:Policy><wsdl:types><xsd:schema
+        targetNamespace="http://tempuri.org/Imports"><xsd:import schemaLocation="https://ws.netcash.co.za/NIWS/NIWS_Validation.svc?xsd=xsd0"
+        namespace="http://tempuri.org/"/><xsd:import schemaLocation="https://ws.netcash.co.za/NIWS/NIWS_Validation.svc?xsd=xsd1"
+        namespace="http://schemas.microsoft.com/2003/10/Serialization/"/></xsd:schema></wsdl:types><wsdl:message
+        name="INIWS_Validation_ValidateBankAccount_InputMessage"><wsdl:part name="parameters"
+        element="tns:ValidateBankAccount"/></wsdl:message><wsdl:message name="INIWS_Validation_ValidateBankAccount_OutputMessage"><wsdl:part
+        name="parameters" element="tns:ValidateBankAccountResponse"/></wsdl:message><wsdl:message
+        name="INIWS_Validation_ValidateBranchCode_InputMessage"><wsdl:part name="parameters"
+        element="tns:ValidateBranchCode"/></wsdl:message><wsdl:message name="INIWS_Validation_ValidateBranchCode_OutputMessage"><wsdl:part
+        name="parameters" element="tns:ValidateBranchCodeResponse"/></wsdl:message><wsdl:message
+        name="INIWS_Validation_GetBankList_InputMessage"><wsdl:part name="parameters"
+        element="tns:GetBankList"/></wsdl:message><wsdl:message name="INIWS_Validation_GetBankList_OutputMessage"><wsdl:part
+        name="parameters" element="tns:GetBankListResponse"/></wsdl:message><wsdl:message
+        name="INIWS_Validation_GetBankListWithDefaultBranchCode_InputMessage"><wsdl:part
+        name="parameters" element="tns:GetBankListWithDefaultBranchCode"/></wsdl:message><wsdl:message
+        name="INIWS_Validation_GetBankListWithDefaultBranchCode_OutputMessage"><wsdl:part
+        name="parameters" element="tns:GetBankListWithDefaultBranchCodeResponse"/></wsdl:message><wsdl:message
+        name="INIWS_Validation_GetBranchList_InputMessage"><wsdl:part name="parameters"
+        element="tns:GetBranchList"/></wsdl:message><wsdl:message name="INIWS_Validation_GetBranchList_OutputMessage"><wsdl:part
+        name="parameters" element="tns:GetBranchListResponse"/></wsdl:message><wsdl:message
+        name="INIWS_Validation_ValidateId_InputMessage"><wsdl:part name="parameters"
+        element="tns:ValidateId"/></wsdl:message><wsdl:message name="INIWS_Validation_ValidateId_OutputMessage"><wsdl:part
+        name="parameters" element="tns:ValidateIdResponse"/></wsdl:message><wsdl:message
+        name="INIWS_Validation_GetBranchListBySuburb_InputMessage"><wsdl:part name="parameters"
+        element="tns:GetBranchListBySuburb"/></wsdl:message><wsdl:message name="INIWS_Validation_GetBranchListBySuburb_OutputMessage"><wsdl:part
+        name="parameters" element="tns:GetBranchListBySuburbResponse"/></wsdl:message><wsdl:portType
+        name="INIWS_Validation"><wsdl:operation name="ValidateBankAccount"><wsdl:input
+        wsaw:Action="http://tempuri.org/INIWS_Validation/ValidateBankAccount" message="tns:INIWS_Validation_ValidateBankAccount_InputMessage"/><wsdl:output
+        wsaw:Action="http://tempuri.org/INIWS_Validation/ValidateBankAccountResponse"
+        message="tns:INIWS_Validation_ValidateBankAccount_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="ValidateBranchCode"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_Validation/ValidateBranchCode"
+        message="tns:INIWS_Validation_ValidateBranchCode_InputMessage"/><wsdl:output
+        wsaw:Action="http://tempuri.org/INIWS_Validation/ValidateBranchCodeResponse"
+        message="tns:INIWS_Validation_ValidateBranchCode_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="GetBankList"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_Validation/GetBankList"
+        message="tns:INIWS_Validation_GetBankList_InputMessage"/><wsdl:output wsaw:Action="http://tempuri.org/INIWS_Validation/GetBankListResponse"
+        message="tns:INIWS_Validation_GetBankList_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="GetBankListWithDefaultBranchCode"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_Validation/GetBankListWithDefaultBranchCode"
+        message="tns:INIWS_Validation_GetBankListWithDefaultBranchCode_InputMessage"/><wsdl:output
+        wsaw:Action="http://tempuri.org/INIWS_Validation/GetBankListWithDefaultBranchCodeResponse"
+        message="tns:INIWS_Validation_GetBankListWithDefaultBranchCode_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="GetBranchList"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_Validation/GetBranchList"
+        message="tns:INIWS_Validation_GetBranchList_InputMessage"/><wsdl:output wsaw:Action="http://tempuri.org/INIWS_Validation/GetBranchListResponse"
+        message="tns:INIWS_Validation_GetBranchList_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="ValidateId"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_Validation/ValidateId"
+        message="tns:INIWS_Validation_ValidateId_InputMessage"/><wsdl:output wsaw:Action="http://tempuri.org/INIWS_Validation/ValidateIdResponse"
+        message="tns:INIWS_Validation_ValidateId_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="GetBranchListBySuburb"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_Validation/GetBranchListBySuburb"
+        message="tns:INIWS_Validation_GetBranchListBySuburb_InputMessage"/><wsdl:output
+        wsaw:Action="http://tempuri.org/INIWS_Validation/GetBranchListBySuburbResponse"
+        message="tns:INIWS_Validation_GetBranchListBySuburb_OutputMessage"/></wsdl:operation></wsdl:portType><wsdl:binding
+        name="BasicHttpBinding_INIWS_Validation" type="tns:INIWS_Validation"><wsp:PolicyReference
+        URI="#BasicHttpBinding_INIWS_Validation_policy"/><soap:binding transport="http://schemas.xmlsoap.org/soap/http"/><wsdl:operation
+        name="ValidateBankAccount"><soap:operation soapAction="http://tempuri.org/INIWS_Validation/ValidateBankAccount"
+        style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body
+        use="literal"/></wsdl:output></wsdl:operation><wsdl:operation name="ValidateBranchCode"><soap:operation
+        soapAction="http://tempuri.org/INIWS_Validation/ValidateBranchCode" style="document"/><wsdl:input><soap:body
+        use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation><wsdl:operation
+        name="GetBankList"><soap:operation soapAction="http://tempuri.org/INIWS_Validation/GetBankList"
+        style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body
+        use="literal"/></wsdl:output></wsdl:operation><wsdl:operation name="GetBankListWithDefaultBranchCode"><soap:operation
+        soapAction="http://tempuri.org/INIWS_Validation/GetBankListWithDefaultBranchCode"
+        style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body
+        use="literal"/></wsdl:output></wsdl:operation><wsdl:operation name="GetBranchList"><soap:operation
+        soapAction="http://tempuri.org/INIWS_Validation/GetBranchList" style="document"/><wsdl:input><soap:body
+        use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation><wsdl:operation
+        name="ValidateId"><soap:operation soapAction="http://tempuri.org/INIWS_Validation/ValidateId"
+        style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body
+        use="literal"/></wsdl:output></wsdl:operation><wsdl:operation name="GetBranchListBySuburb"><soap:operation
+        soapAction="http://tempuri.org/INIWS_Validation/GetBranchListBySuburb" style="document"/><wsdl:input><soap:body
+        use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation></wsdl:binding><wsdl:service
+        name="NIWS_Validation"><wsdl:port name="BasicHttpBinding_INIWS_Validation"
+        binding="tns:BasicHttpBinding_INIWS_Validation"><soap:address location="https://ws.netcash.co.za/NIWS/NIWS_Validation.svc"/></wsdl:port></wsdl:service></wsdl:definitions>
+  recorded_at: Mon, 29 Jun 2020 17:39:26 GMT
+- request:
+    method: post
+    uri: https://ws.netcash.co.za/NIWS/NIWS_Validation.svc
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://tempuri.org/"
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Body><tns:ValidateBankAccount><tns:ServiceKey>4724c261-dad5-4a64-852c-9b88a67b3c50</tns:ServiceKey><tns:AccountNumber>123456789</tns:AccountNumber><tns:BranchCode>632005</tns:BranchCode><tns:AccountType>1</tns:AccountType></tns:ValidateBankAccount></env:Body></env:Envelope>
+    headers:
+      Soapaction:
+      - '"http://tempuri.org/INIWS_Validation/ValidateBankAccount"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '516'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - text/xml; charset=utf-8
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Mon, 29 Jun 2020 17:39:26 GMT
+      Set-Cookie:
+      - cookiesession1=32A38373HAUAESBJCL0PNXUCP16C15E4;Path=/;HttpOnly
+      Content-Length:
+      - '237'
+    body:
+      encoding: UTF-8
+      string: <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"><s:Body><ValidateBankAccountResponse
+        xmlns="http://tempuri.org/"><ValidateBankAccountResult>0</ValidateBankAccountResult></ValidateBankAccountResponse></s:Body></s:Envelope>
+  recorded_at: Mon, 29 Jun 2020 17:39:26 GMT
+recorded_with: VCR 6.0.0

@@ -6,7 +6,11 @@ module NetcashApi
           message: XmlKeyAdapter.convert_keys(params)
         })
 
-        yield(response) if block_given?
+        if block_given?
+          yield response
+        else
+          return response
+        end
       end
     end
   end

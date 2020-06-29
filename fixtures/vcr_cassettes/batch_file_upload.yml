@@ -1,0 +1,313 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws.netcash.co.za/NIWS/NIWS_NIF.svc?wsdl
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '23156'
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Server:
+      - Microsoft-IIS/8.5
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Mon, 29 Jun 2020 17:34:34 GMT
+      Set-Cookie:
+      - cookiesession1=32A38373GJUEK4YJHM9IZ46149GUCFDC;Path=/;HttpOnly
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><wsdl:definitions name="NIWS_NIF"
+        targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+        xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+        xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+        xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+        xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+        xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing"
+        xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"><wsp:Policy wsu:Id="BasicHttpBinding_INIWS_NIF_policy"><wsp:ExactlyOne><wsp:All><sp:TransportBinding
+        xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy"><wsp:Policy><sp:TransportToken><wsp:Policy><sp:HttpsToken
+        RequireClientCertificate="false"/></wsp:Policy></sp:TransportToken><sp:AlgorithmSuite><wsp:Policy><sp:Basic256/></wsp:Policy></sp:AlgorithmSuite><sp:Layout><wsp:Policy><sp:Strict/></wsp:Policy></sp:Layout></wsp:Policy></sp:TransportBinding></wsp:All></wsp:ExactlyOne></wsp:Policy><wsdl:types><xsd:schema
+        targetNamespace="http://tempuri.org/Imports"><xsd:import schemaLocation="https://ws.netcash.co.za/NIWS/NIWS_NIF.svc?xsd=xsd0"
+        namespace="http://tempuri.org/"/><xsd:import schemaLocation="https://ws.netcash.co.za/NIWS/NIWS_NIF.svc?xsd=xsd1"
+        namespace="http://schemas.microsoft.com/2003/10/Serialization/"/><xsd:import
+        schemaLocation="https://ws.netcash.co.za/NIWS/NIWS_NIF.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xsd:import
+        schemaLocation="https://ws.netcash.co.za/NIWS/NIWS_NIF.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/NC.DG.TMS.C.WCF.NIWS"/></xsd:schema></wsdl:types><wsdl:message
+        name="INIWS_NIF_AccountFundsRelease_InputMessage"><wsdl:part name="parameters"
+        element="tns:AccountFundsRelease"/></wsdl:message><wsdl:message name="INIWS_NIF_AccountFundsRelease_OutputMessage"><wsdl:part
+        name="parameters" element="tns:AccountFundsReleaseResponse"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_RequestActionDate_InputMessage"><wsdl:part name="parameters"
+        element="tns:RequestActionDate"/></wsdl:message><wsdl:message name="INIWS_NIF_RequestActionDate_OutputMessage"><wsdl:part
+        name="parameters" element="tns:RequestActionDateResponse"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_RequestInterimMerchantStatement_InputMessage"><wsdl:part name="parameters"
+        element="tns:RequestInterimMerchantStatement"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_RequestInterimMerchantStatement_OutputMessage"><wsdl:part
+        name="parameters" element="tns:RequestInterimMerchantStatementResponse"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_RequestMerchantStatement_InputMessage"><wsdl:part name="parameters"
+        element="tns:RequestMerchantStatement"/></wsdl:message><wsdl:message name="INIWS_NIF_RequestMerchantStatement_OutputMessage"><wsdl:part
+        name="parameters" element="tns:RequestMerchantStatementResponse"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_RetrieveMerchantStatement_InputMessage"><wsdl:part name="parameters"
+        element="tns:RetrieveMerchantStatement"/></wsdl:message><wsdl:message name="INIWS_NIF_RetrieveMerchantStatement_OutputMessage"><wsdl:part
+        name="parameters" element="tns:RetrieveMerchantStatementResponse"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_RequestTransactionTypes_InputMessage"><wsdl:part name="parameters"
+        element="tns:RequestTransactionTypes"/></wsdl:message><wsdl:message name="INIWS_NIF_RequestTransactionTypes_OutputMessage"><wsdl:part
+        name="parameters" element="tns:RequestTransactionTypesResponse"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_RetrieveTransactionTypes_InputMessage"><wsdl:part name="parameters"
+        element="tns:RetrieveTransactionTypes"/></wsdl:message><wsdl:message name="INIWS_NIF_RetrieveTransactionTypes_OutputMessage"><wsdl:part
+        name="parameters" element="tns:RetrieveTransactionTypesResponse"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_LegacyCompactBatchFileUpload_InputMessage"><wsdl:part name="parameters"
+        element="tns:LegacyCompactBatchFileUpload"/></wsdl:message><wsdl:message name="INIWS_NIF_LegacyCompactBatchFileUpload_OutputMessage"><wsdl:part
+        name="parameters" element="tns:LegacyCompactBatchFileUploadResponse"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_LegacyBatchFileUpload_InputMessage"><wsdl:part name="parameters"
+        element="tns:LegacyBatchFileUpload"/></wsdl:message><wsdl:message name="INIWS_NIF_LegacyBatchFileUpload_OutputMessage"><wsdl:part
+        name="parameters" element="tns:LegacyBatchFileUploadResponse"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_BatchFileUpload_InputMessage"><wsdl:part name="parameters"
+        element="tns:BatchFileUpload"/></wsdl:message><wsdl:message name="INIWS_NIF_BatchFileUpload_OutputMessage"><wsdl:part
+        name="parameters" element="tns:BatchFileUploadResponse"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_RequestFileUploadReport_InputMessage"><wsdl:part name="parameters"
+        element="tns:RequestFileUploadReport"/></wsdl:message><wsdl:message name="INIWS_NIF_RequestFileUploadReport_OutputMessage"><wsdl:part
+        name="parameters" element="tns:RequestFileUploadReportResponse"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_RequestCombinedUploadReportForDate_InputMessage"><wsdl:part
+        name="parameters" element="tns:RequestCombinedUploadReportForDate"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_RequestCombinedUploadReportForDate_OutputMessage"><wsdl:part
+        name="parameters" element="tns:RequestCombinedUploadReportForDateResponse"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_RequestCreditDataReport_InputMessage"><wsdl:part name="parameters"
+        element="tns:RequestCreditDataReport"/></wsdl:message><wsdl:message name="INIWS_NIF_RequestCreditDataReport_OutputMessage"><wsdl:part
+        name="parameters" element="tns:RequestCreditDataReportResponse"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_RequestAVSReport_InputMessage"><wsdl:part name="parameters"
+        element="tns:RequestAVSReport"/></wsdl:message><wsdl:message name="INIWS_NIF_RequestAVSReport_OutputMessage"><wsdl:part
+        name="parameters" element="tns:RequestAVSReportResponse"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_RequestPayNowInvoice_InputMessage"><wsdl:part name="parameters"
+        element="tns:RequestPayNowInvoice"/></wsdl:message><wsdl:message name="INIWS_NIF_RequestPayNowInvoice_OutputMessage"><wsdl:part
+        name="parameters" element="tns:RequestPayNowInvoiceResponse"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_IsValidServiceKey_InputMessage"><wsdl:part name="parameters"
+        element="tns:IsValidServiceKey"/></wsdl:message><wsdl:message name="INIWS_NIF_IsValidServiceKey_OutputMessage"><wsdl:part
+        name="parameters" element="tns:IsValidServiceKeyResponse"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_AccountServiceKeys_InputMessage"><wsdl:part name="parameters"
+        element="tns:AccountServiceKeys"/></wsdl:message><wsdl:message name="INIWS_NIF_AccountServiceKeys_OutputMessage"><wsdl:part
+        name="parameters" element="tns:AccountServiceKeysResponse"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_MerchantStatementSourceStatus_InputMessage"><wsdl:part name="parameters"
+        element="tns:MerchantStatementSourceStatus"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_MerchantStatementSourceStatus_OutputMessage"><wsdl:part name="parameters"
+        element="tns:MerchantStatementSourceStatusResponse"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_RequestDebitBatchUnauthorised_InputMessage"><wsdl:part name="parameters"
+        element="tns:RequestDebitBatchUnauthorised"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_RequestDebitBatchUnauthorised_OutputMessage"><wsdl:part name="parameters"
+        element="tns:RequestDebitBatchUnauthorisedResponse"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_RetrieveBatchStatus_InputMessage"><wsdl:part name="parameters"
+        element="tns:RetrieveBatchStatus"/></wsdl:message><wsdl:message name="INIWS_NIF_RetrieveBatchStatus_OutputMessage"><wsdl:part
+        name="parameters" element="tns:RetrieveBatchStatusResponse"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_RetrieveUnauthorisedBatches_InputMessage"><wsdl:part name="parameters"
+        element="tns:RetrieveUnauthorisedBatches"/></wsdl:message><wsdl:message name="INIWS_NIF_RetrieveUnauthorisedBatches_OutputMessage"><wsdl:part
+        name="parameters" element="tns:RetrieveUnauthorisedBatchesResponse"/></wsdl:message><wsdl:message
+        name="INIWS_NIF_RequestBatchAuthorise_InputMessage"><wsdl:part name="parameters"
+        element="tns:RequestBatchAuthorise"/></wsdl:message><wsdl:message name="INIWS_NIF_RequestBatchAuthorise_OutputMessage"><wsdl:part
+        name="parameters" element="tns:RequestBatchAuthoriseResponse"/></wsdl:message><wsdl:portType
+        name="INIWS_NIF"><wsdl:operation name="AccountFundsRelease"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_NIF/AccountFundsRelease"
+        message="tns:INIWS_NIF_AccountFundsRelease_InputMessage"/><wsdl:output wsaw:Action="http://tempuri.org/INIWS_NIF/AccountFundsReleaseResponse"
+        message="tns:INIWS_NIF_AccountFundsRelease_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="RequestActionDate"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_NIF/RequestActionDate"
+        message="tns:INIWS_NIF_RequestActionDate_InputMessage"/><wsdl:output wsaw:Action="http://tempuri.org/INIWS_NIF/RequestActionDateResponse"
+        message="tns:INIWS_NIF_RequestActionDate_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="RequestInterimMerchantStatement"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_NIF/RequestInterimMerchantStatement"
+        message="tns:INIWS_NIF_RequestInterimMerchantStatement_InputMessage"/><wsdl:output
+        wsaw:Action="http://tempuri.org/INIWS_NIF/RequestInterimMerchantStatementResponse"
+        message="tns:INIWS_NIF_RequestInterimMerchantStatement_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="RequestMerchantStatement"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_NIF/RequestMerchantStatement"
+        message="tns:INIWS_NIF_RequestMerchantStatement_InputMessage"/><wsdl:output
+        wsaw:Action="http://tempuri.org/INIWS_NIF/RequestMerchantStatementResponse"
+        message="tns:INIWS_NIF_RequestMerchantStatement_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="RetrieveMerchantStatement"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_NIF/RetrieveMerchantStatement"
+        message="tns:INIWS_NIF_RetrieveMerchantStatement_InputMessage"/><wsdl:output
+        wsaw:Action="http://tempuri.org/INIWS_NIF/RetrieveMerchantStatementResponse"
+        message="tns:INIWS_NIF_RetrieveMerchantStatement_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="RequestTransactionTypes"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_NIF/RequestTransactionTypes"
+        message="tns:INIWS_NIF_RequestTransactionTypes_InputMessage"/><wsdl:output
+        wsaw:Action="http://tempuri.org/INIWS_NIF/RequestTransactionTypesResponse"
+        message="tns:INIWS_NIF_RequestTransactionTypes_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="RetrieveTransactionTypes"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_NIF/RetrieveTransactionTypes"
+        message="tns:INIWS_NIF_RetrieveTransactionTypes_InputMessage"/><wsdl:output
+        wsaw:Action="http://tempuri.org/INIWS_NIF/RetrieveTransactionTypesResponse"
+        message="tns:INIWS_NIF_RetrieveTransactionTypes_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="LegacyCompactBatchFileUpload"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_NIF/LegacyCompactBatchFileUpload"
+        message="tns:INIWS_NIF_LegacyCompactBatchFileUpload_InputMessage"/><wsdl:output
+        wsaw:Action="http://tempuri.org/INIWS_NIF/LegacyCompactBatchFileUploadResponse"
+        message="tns:INIWS_NIF_LegacyCompactBatchFileUpload_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="LegacyBatchFileUpload"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_NIF/LegacyBatchFileUpload"
+        message="tns:INIWS_NIF_LegacyBatchFileUpload_InputMessage"/><wsdl:output wsaw:Action="http://tempuri.org/INIWS_NIF/LegacyBatchFileUploadResponse"
+        message="tns:INIWS_NIF_LegacyBatchFileUpload_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="BatchFileUpload"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_NIF/BatchFileUpload"
+        message="tns:INIWS_NIF_BatchFileUpload_InputMessage"/><wsdl:output wsaw:Action="http://tempuri.org/INIWS_NIF/BatchFileUploadResponse"
+        message="tns:INIWS_NIF_BatchFileUpload_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="RequestFileUploadReport"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_NIF/RequestFileUploadReport"
+        message="tns:INIWS_NIF_RequestFileUploadReport_InputMessage"/><wsdl:output
+        wsaw:Action="http://tempuri.org/INIWS_NIF/RequestFileUploadReportResponse"
+        message="tns:INIWS_NIF_RequestFileUploadReport_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="RequestCombinedUploadReportForDate"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_NIF/RequestCombinedUploadReportForDate"
+        message="tns:INIWS_NIF_RequestCombinedUploadReportForDate_InputMessage"/><wsdl:output
+        wsaw:Action="http://tempuri.org/INIWS_NIF/RequestCombinedUploadReportForDateResponse"
+        message="tns:INIWS_NIF_RequestCombinedUploadReportForDate_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="RequestCreditDataReport"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_NIF/RequestCreditDataReport"
+        message="tns:INIWS_NIF_RequestCreditDataReport_InputMessage"/><wsdl:output
+        wsaw:Action="http://tempuri.org/INIWS_NIF/RequestCreditDataReportResponse"
+        message="tns:INIWS_NIF_RequestCreditDataReport_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="RequestAVSReport"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_NIF/RequestAVSReport"
+        message="tns:INIWS_NIF_RequestAVSReport_InputMessage"/><wsdl:output wsaw:Action="http://tempuri.org/INIWS_NIF/RequestAVSReportResponse"
+        message="tns:INIWS_NIF_RequestAVSReport_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="RequestPayNowInvoice"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_NIF/RequestPayNowInvoice"
+        message="tns:INIWS_NIF_RequestPayNowInvoice_InputMessage"/><wsdl:output wsaw:Action="http://tempuri.org/INIWS_NIF/RequestPayNowInvoiceResponse"
+        message="tns:INIWS_NIF_RequestPayNowInvoice_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="IsValidServiceKey"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_NIF/IsValidServiceKey"
+        message="tns:INIWS_NIF_IsValidServiceKey_InputMessage"/><wsdl:output wsaw:Action="http://tempuri.org/INIWS_NIF/IsValidServiceKeyResponse"
+        message="tns:INIWS_NIF_IsValidServiceKey_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="AccountServiceKeys"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_NIF/AccountServiceKeys"
+        message="tns:INIWS_NIF_AccountServiceKeys_InputMessage"/><wsdl:output wsaw:Action="http://tempuri.org/INIWS_NIF/AccountServiceKeysResponse"
+        message="tns:INIWS_NIF_AccountServiceKeys_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="MerchantStatementSourceStatus"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_NIF/MerchantStatementSourceStatus"
+        message="tns:INIWS_NIF_MerchantStatementSourceStatus_InputMessage"/><wsdl:output
+        wsaw:Action="http://tempuri.org/INIWS_NIF/MerchantStatementSourceStatusResponse"
+        message="tns:INIWS_NIF_MerchantStatementSourceStatus_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="RequestDebitBatchUnauthorised"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_NIF/RequestDebitBatchUnauthorised"
+        message="tns:INIWS_NIF_RequestDebitBatchUnauthorised_InputMessage"/><wsdl:output
+        wsaw:Action="http://tempuri.org/INIWS_NIF/RequestDebitBatchUnauthorisedResponse"
+        message="tns:INIWS_NIF_RequestDebitBatchUnauthorised_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="RetrieveBatchStatus"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_NIF/RetrieveBatchStatus"
+        message="tns:INIWS_NIF_RetrieveBatchStatus_InputMessage"/><wsdl:output wsaw:Action="http://tempuri.org/INIWS_NIF/RetrieveBatchStatusResponse"
+        message="tns:INIWS_NIF_RetrieveBatchStatus_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="RetrieveUnauthorisedBatches"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_NIF/RetrieveUnauthorisedBatches"
+        message="tns:INIWS_NIF_RetrieveUnauthorisedBatches_InputMessage"/><wsdl:output
+        wsaw:Action="http://tempuri.org/INIWS_NIF/RetrieveUnauthorisedBatchesResponse"
+        message="tns:INIWS_NIF_RetrieveUnauthorisedBatches_OutputMessage"/></wsdl:operation><wsdl:operation
+        name="RequestBatchAuthorise"><wsdl:input wsaw:Action="http://tempuri.org/INIWS_NIF/RequestBatchAuthorise"
+        message="tns:INIWS_NIF_RequestBatchAuthorise_InputMessage"/><wsdl:output wsaw:Action="http://tempuri.org/INIWS_NIF/RequestBatchAuthoriseResponse"
+        message="tns:INIWS_NIF_RequestBatchAuthorise_OutputMessage"/></wsdl:operation></wsdl:portType><wsdl:binding
+        name="BasicHttpBinding_INIWS_NIF" type="tns:INIWS_NIF"><wsp:PolicyReference
+        URI="#BasicHttpBinding_INIWS_NIF_policy"/><soap:binding transport="http://schemas.xmlsoap.org/soap/http"/><wsdl:operation
+        name="AccountFundsRelease"><soap:operation soapAction="http://tempuri.org/INIWS_NIF/AccountFundsRelease"
+        style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body
+        use="literal"/></wsdl:output></wsdl:operation><wsdl:operation name="RequestActionDate"><soap:operation
+        soapAction="http://tempuri.org/INIWS_NIF/RequestActionDate" style="document"/><wsdl:input><soap:body
+        use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation><wsdl:operation
+        name="RequestInterimMerchantStatement"><soap:operation soapAction="http://tempuri.org/INIWS_NIF/RequestInterimMerchantStatement"
+        style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body
+        use="literal"/></wsdl:output></wsdl:operation><wsdl:operation name="RequestMerchantStatement"><soap:operation
+        soapAction="http://tempuri.org/INIWS_NIF/RequestMerchantStatement" style="document"/><wsdl:input><soap:body
+        use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation><wsdl:operation
+        name="RetrieveMerchantStatement"><soap:operation soapAction="http://tempuri.org/INIWS_NIF/RetrieveMerchantStatement"
+        style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body
+        use="literal"/></wsdl:output></wsdl:operation><wsdl:operation name="RequestTransactionTypes"><soap:operation
+        soapAction="http://tempuri.org/INIWS_NIF/RequestTransactionTypes" style="document"/><wsdl:input><soap:body
+        use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation><wsdl:operation
+        name="RetrieveTransactionTypes"><soap:operation soapAction="http://tempuri.org/INIWS_NIF/RetrieveTransactionTypes"
+        style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body
+        use="literal"/></wsdl:output></wsdl:operation><wsdl:operation name="LegacyCompactBatchFileUpload"><soap:operation
+        soapAction="http://tempuri.org/INIWS_NIF/LegacyCompactBatchFileUpload" style="document"/><wsdl:input><soap:body
+        use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation><wsdl:operation
+        name="LegacyBatchFileUpload"><soap:operation soapAction="http://tempuri.org/INIWS_NIF/LegacyBatchFileUpload"
+        style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body
+        use="literal"/></wsdl:output></wsdl:operation><wsdl:operation name="BatchFileUpload"><soap:operation
+        soapAction="http://tempuri.org/INIWS_NIF/BatchFileUpload" style="document"/><wsdl:input><soap:body
+        use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation><wsdl:operation
+        name="RequestFileUploadReport"><soap:operation soapAction="http://tempuri.org/INIWS_NIF/RequestFileUploadReport"
+        style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body
+        use="literal"/></wsdl:output></wsdl:operation><wsdl:operation name="RequestCombinedUploadReportForDate"><soap:operation
+        soapAction="http://tempuri.org/INIWS_NIF/RequestCombinedUploadReportForDate"
+        style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body
+        use="literal"/></wsdl:output></wsdl:operation><wsdl:operation name="RequestCreditDataReport"><soap:operation
+        soapAction="http://tempuri.org/INIWS_NIF/RequestCreditDataReport" style="document"/><wsdl:input><soap:body
+        use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation><wsdl:operation
+        name="RequestAVSReport"><soap:operation soapAction="http://tempuri.org/INIWS_NIF/RequestAVSReport"
+        style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body
+        use="literal"/></wsdl:output></wsdl:operation><wsdl:operation name="RequestPayNowInvoice"><soap:operation
+        soapAction="http://tempuri.org/INIWS_NIF/RequestPayNowInvoice" style="document"/><wsdl:input><soap:body
+        use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation><wsdl:operation
+        name="IsValidServiceKey"><soap:operation soapAction="http://tempuri.org/INIWS_NIF/IsValidServiceKey"
+        style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body
+        use="literal"/></wsdl:output></wsdl:operation><wsdl:operation name="AccountServiceKeys"><soap:operation
+        soapAction="http://tempuri.org/INIWS_NIF/AccountServiceKeys" style="document"/><wsdl:input><soap:body
+        use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation><wsdl:operation
+        name="MerchantStatementSourceStatus"><soap:operation soapAction="http://tempuri.org/INIWS_NIF/MerchantStatementSourceStatus"
+        style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body
+        use="literal"/></wsdl:output></wsdl:operation><wsdl:operation name="RequestDebitBatchUnauthorised"><soap:operation
+        soapAction="http://tempuri.org/INIWS_NIF/RequestDebitBatchUnauthorised" style="document"/><wsdl:input><soap:body
+        use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation><wsdl:operation
+        name="RetrieveBatchStatus"><soap:operation soapAction="http://tempuri.org/INIWS_NIF/RetrieveBatchStatus"
+        style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body
+        use="literal"/></wsdl:output></wsdl:operation><wsdl:operation name="RetrieveUnauthorisedBatches"><soap:operation
+        soapAction="http://tempuri.org/INIWS_NIF/RetrieveUnauthorisedBatches" style="document"/><wsdl:input><soap:body
+        use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation><wsdl:operation
+        name="RequestBatchAuthorise"><soap:operation soapAction="http://tempuri.org/INIWS_NIF/RequestBatchAuthorise"
+        style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body
+        use="literal"/></wsdl:output></wsdl:operation></wsdl:binding><wsdl:service
+        name="NIWS_NIF"><wsdl:port name="BasicHttpBinding_INIWS_NIF" binding="tns:BasicHttpBinding_INIWS_NIF"><soap:address
+        location="https://ws.netcash.co.za/NIWS/NIWS_NIF.svc"/></wsdl:port></wsdl:service></wsdl:definitions>
+  recorded_at: Mon, 29 Jun 2020 17:34:35 GMT
+- request:
+    method: post
+    uri: https://ws.netcash.co.za/NIWS/NIWS_NIF.svc
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?><env:Envelope xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"
+        xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:tns=\"http://tempuri.org/\"
+        xmlns:env=\"http://schemas.xmlsoap.org/soap/envelope/\"><env:Body><tns:BatchFileUpload><tns:ServiceKey>d930eccd-3a6c-40b5-a611-831a72d012c4</tns:ServiceKey><tns:File>H\td930eccd-3a6c-40b5-a611-831a72d012c4\t1\tSameDay\t123\t20200704\t4724c261-dad5-4a64-852c-9b88a67b3c50\nK\t101\t102\t131\t132\t133\t134\t135\t136\t162\nT\t790\tTest
+        Account Name\t1\tTest Bank Account\t1\t632005\t0\t123456789\t5000\nT\t370\tTest
+        Account Name\t1\tTest Bank Account\t1\t632005\t0\t123456789\t5000\nT\t432\tTest
+        Account Name\t1\tTest Bank Account\t1\t632005\t0\t123456789\t5000\nT\t769\tTest
+        Account Name\t1\tTest Bank Account\t1\t632005\t0\t123456789\t5000\nT\t657\tTest
+        Account Name\t1\tTest Bank Account\t1\t632005\t0\t123456789\t5000\nF\t5\t25000\t9999\n</tns:File></tns:BatchFileUpload></env:Body></env:Envelope>"
+    headers:
+      Soapaction:
+      - '"http://tempuri.org/INIWS_NIF/BatchFileUpload"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '908'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - text/xml; charset=utf-8
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Mon, 29 Jun 2020 17:34:34 GMT
+      Set-Cookie:
+      - cookiesession1=32A38373UXIRJHUTMQAH5HB3I4JP2E17;Path=/;HttpOnly
+      Content-Length:
+      - '254'
+    body:
+      encoding: UTF-8
+      string: <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"><s:Body><BatchFileUploadResponse
+        xmlns="http://tempuri.org/"><BatchFileUploadResult>10028929.1000711981.5684.63807.011</BatchFileUploadResult></BatchFileUploadResponse></s:Body></s:Envelope>
+  recorded_at: Mon, 29 Jun 2020 17:34:35 GMT
+recorded_with: VCR 6.0.0

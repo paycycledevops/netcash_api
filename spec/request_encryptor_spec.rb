@@ -1,6 +1,5 @@
 RSpec.describe NetcashApi::RequestEncryptor do
   describe '.encrypt' do
-    let(:vendor_id) { '24ade73c-98cf-47b3-99be-cc7b867b3080' }
 
     subject { NetcashApi::RequestEncryptor }
 
