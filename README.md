@@ -1,7 +1,7 @@
 # NetcashApi
 
 A Ruby adapater for the Netcash API.
-[Documnetation](https://api.netcash.co.za/)
+[Documentation](https://api.netcash.co.za/)
 
 ## Installation
 
