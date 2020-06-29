@@ -19,4 +19,11 @@ RSpec.describe NetcashApi::StandardDebitOrder do
       file: file
     )
   end
+
+  let(:response) { File.read('spec/fixtures/batch_file_report_file.txt') }
+  let(:load_report) { NetcashApi::BatchFileUploadReport::File.new(file: response) }
+
+  it do
+    expect(load_report.report.count).to be 5
+  end
 end

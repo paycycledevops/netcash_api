@@ -1,0 +1,3 @@
+###BEGIN MY TEST BATCH UNSUCCESSFUL 01:23 PM R1.00 20160410
+###ERROR: A system error occurred. Please contact Netcash R0.00 20160410
+###END 01:23 PM

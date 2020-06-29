@@ -1,0 +1,6 @@
+###BEGIN MY TEST BATCH SUCCESSFUL WITH ERRORS 01:29 PM R1.00 20160410
+Acc Ref :XI5 Line :3 Account details could not be validated. Please check the fields Bank account type, Branch code and Account number.
+Acc Ref :XI5 Line :3 Bank account number has incorrect length (min 4, max 11 characters)
+Acc Ref :HCOS1 Line :5 Beneficiary statement reference has incorrect length (min 4, max 20 characters)
+Acc Ref :HCOZ1 Line :6 Beneficiary statement reference has incorrect length (min 4, max 20 characters)
+###END 01:29 PM
