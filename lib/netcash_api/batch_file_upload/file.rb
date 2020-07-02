@@ -7,7 +7,8 @@ module NetcashApi
         :software_vendor_key,
         :batch_identifier,
         :instruction,
-        :transactions
+        :transactions,
+        :action_date
 
       def initialize(args)
         args.each { |key, value| send("#{key}=", value) }
@@ -45,7 +46,8 @@ module NetcashApi
           service_key: service_key,
           software_vendor_key: software_vendor_key,
           batch_identifier: batch_identifier,
-          instruction: instruction
+          instruction: instruction,
+          action_date: action_date
         ).row
       end
 

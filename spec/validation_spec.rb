@@ -1,5 +1,5 @@
 RSpec.describe NetcashApi::Validation do
-  let(:validation_service_key) { '1234' }
+  let(:validation_service_key) { ENV['VALIDATION_SERVICE_KEY'] }
 
   it do
     VCR.use_cassette 'bank_account_validation' do

@@ -13,6 +13,8 @@ require 'netcash_api/batch_file_upload/transaction'
 
 require 'netcash_api/services/xml_key_adapter'
 
+require 'netcash_api/statement/response'
+
 require 'netcash_api/client'
 require 'netcash_api/validation'
 require 'netcash_api/standard_debit_order'

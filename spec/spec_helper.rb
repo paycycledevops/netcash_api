@@ -5,6 +5,7 @@ require 'webmock/rspec'
 require 'factory_bot'
 require 'httplog'
 require 'vcr'
+require 'dotenv/load'
 
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"

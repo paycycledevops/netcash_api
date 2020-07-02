@@ -58,7 +58,7 @@ transactions = [
 ]
 
 batch_file_upload = NetcashApi::BatchFileUpload::File.new(
-  service_key: ENV['DIRECT_DEBIT_SERVICE_KEY'],
+  service_key: ENV['ACCOUNT_SERVICE_KEY'],
   software_vendor_key: ENV['SOFTWARE_VENDOR_KEY'],
   batch_identifier: 1234,
   transactions: transactions
@@ -77,14 +77,33 @@ p batch_file_upload.batch_file_upload
 #### METHOD /BatchFileUpload
 
 ```ruby
-NetcashApi::StandardDebitOrder.batch_file_upload(
-  service_key: ENV['DIRECT_DEBIT_SERVICE_KEY'],
+response = NetcashApi::StandardDebitOrder.batch_file_upload(
+  service_key: ENV['ACCOUNT_SERVICE_KEY'],
   file: batch_file_upload.batch_file
-) do |response, file|
-  p response.inspect
-  p file
-end
+)
+token = response.body.dig(:batch_file_upload_response, :batch_file_upload_result)
+# => 20000000.2550236530.0483.2.2
 ```
+
+#### METHOD /BatchFileUploadReport
+
+```Ruby
+response = NetcashApi::StandardDebitOrder.request_file_upload_report(
+  service_key: ENV['ACCOUNT_SERVICE_KEY'],
+  file_token: token)
+response.body.dig(:request_file_upload_report_response, :request_file_upload_report_result)
+
+# =>
+# ###BEGIN MY TEST BATCH SUCCESSFUL 01:59 PM R1.00 20160410
+# ###END 01:59 PM
+```
+
+## Statement
+
+```ruby
+response = NetcashApi::StandardDebitOrder.request_interim_merchant_statement(
+  service_key: ENV['ACCOUNT_SERVICE_KEY'],
+)
 
 ## Contributing
 

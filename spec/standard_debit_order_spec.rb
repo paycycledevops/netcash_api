@@ -1,6 +1,6 @@
 RSpec.describe NetcashApi::StandardDebitOrder do
-  let(:nif_sk) { '12345' }
-  let(:accounts_sk) { '67890' }
+  let(:account_sk) { ENV['ACCOUNT_SERVICE_KEY'] }
+  let(:software_vendor_key) { ENV['SOFTWARE_VENDOR_KEY'] }
 
   let(:transactions) { attributes_for_list :transaction, 5 }
 
@@ -9,15 +9,15 @@ RSpec.describe NetcashApi::StandardDebitOrder do
   context 'batch file upload' do
     it do
       file = NetcashApi::BatchFileUpload::File.new(
-        service_key: nif_sk,
-        software_vendor_key: accounts_sk,
+        service_key: account_sk,
+        software_vendor_key: software_vendor_key,
         batch_identifier: '123',
         transactions: transactions
       ).batch_file
 
       VCR.use_cassette 'batch_file_upload' do
         response = subject.batch_file_upload(
-          service_key: nif_sk,
+          service_key: account_sk,
           file: file
         )
 
@@ -34,4 +34,19 @@ RSpec.describe NetcashApi::StandardDebitOrder do
       expect(load_report.report.count).to be 5
     end
   end
+
+  context 'retrieve unauthorised batches' do
+    it do
+      VCR.use_cassette 'retrieve_unauthorised_batches' do
+        response = subject.retrieve_unauthorised_batches(
+          service_key: account_sk
+        )
+
+        binding.pry
+
+        expect(response.body.dig(:request_interim_merchant_statement_response, :request_interim_merchant_statement_result).length).to eq 18
+      end
+    end
+  end
+
 end

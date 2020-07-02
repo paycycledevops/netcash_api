@@ -1,0 +1,39 @@
+2015-04-08    OBL    0    Opening Balance    0.0000    +    0
+2015-04-08    TDD    1    Dated Debit Order    0.0000    +    0                Debtors
+2015-04-08    TDC    2    Dated Credit Card Debit Order    0.0000    +    0                Debtors
+2015-04-08    DRU    4    Debit order unpaid    -Code:01    0.0000    -    0                Debtors
+2015-04-08    SDD    5    Same day debit order    0.0000    +    0                Debtors
+2015-04-08    SDC    6    Same day credit card debit order    0.0000    +    0                Debtors
+2015-04-08    CRP    11    Same day creditor payment    0.0000    +    0             Extra1 Extra2 Creditors
+2015-04-08    CRU    12    Creditor payment Return     -Code:01    0.0000    -    0                Creditors
+2015-04-08    DTT    13    Deposit received    0.0000    +    0                Business Bank Account
+2015-04-08    CDR    14    Credit data report    0.0000    +    0                NO GL EFFECT
+2015-04-08    SAL    15    Same day salary payment    0.0000    +    0                Salaries
+2015-04-08    NSF    18    Service fee    0.0000    +    0                Sage Pay Fees (Service Fees)
+2015-04-08    BTR    19    Bank transfer to client    0.0000    +    0                Business Bank Account
+2015-04-08    INP    20    Interest paid    0.0000    +    0                Interest Paid Expense
+2015-04-08    IAT    21    Inter-account transfer    0.0000    +    0                Sage Pay Bank Account
+2015-04-08    AVS    22    Bank account verification    0.0000    +    0                NO GL EFFECT
+2015-04-08    SRU    23    Salary payment return    -Code:01    0.0000    -    0                Salaries
+2015-04-08    SAD    24    Dated salary payment    0.0000    +    0                Extra3 Salaries
+2015-04-08    DCP    25    Dated creditor payment    0.0000    +    0                 Extra Data Creditors
+2015-04-08    IST    26    Inter-system transfer    0.0000    +    0                Sage Pay Bank Account
+2015-04-08    BTU    27    Bank transfer return    0.0000    -    0                Business Bank Account
+2015-04-08    ABR    28    Account balance recovery    0.0000    -    0                Business Bank Account
+2015-04-08    CSP    29    Cash payment    0.0000    +    0                Creditors
+2015-04-08    ABU    30    Account balance recovery return    -Code:01    0.0000    -    0                Business Bank Account
+2015-04-08    INR    31    Interest received    0.0000    +    0                Interest Received
+2015-04-08    VAT    32    Value added tax    0.0000    +    0                Input VAT
+2015-04-08    PNC    33    PayNow credit card payment    0.0000    +    0                ABC Payment Debtors/Sales
+2015-04-08    PNU    34    PayNow credit card unpaid    -Code:01    0.0000    -    0                Debtors/Sales
+2015-04-08    PND    35    PayNow credit card dispute    -Code:01    0.0000    -    0                Debtors/Sales
+2015-04-08    PNR    36    PayNow credit card refund    0.0000    +    0                Debtors/Sales
+2015-04-08    DTR    42    Deposit Return    0.0000    -    0                Business Bank Account
+2015-04-08    PNP    43    Pay Now Retail payment    0.0000    +    0                Debtors/Sales
+2015-04-08    PNM    44    Pay Now MasterPass payment    0.0000    +    0                Debtors/Sales
+2015-04-08    PNE    45    Pay Now EFT payment    0.0000    +    0                Debtors/Sales
+2015-04-08    PNQ    46    Pay Now Retail payment return    -Code:01    0.0000    -    0                Debtors/Sales
+2015-04-08    PNW    47    Pay Now MasterPass unpaid    -Code:01    0.0000    -    0                Debtors/Sales
+2015-04-08    PNZ    48    Pay Now EFT recall    -Code:01    0.0000    -    0                Debtors/Sales
+2015-04-08    BDW    52    Bad debt write-off    0.0000    +    0
+2015-04-08    CBL    0    Closing Balance    0.0000    +    0

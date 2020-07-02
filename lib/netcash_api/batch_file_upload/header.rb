@@ -22,7 +22,7 @@ module NetcashApi::BatchFileUpload
         VERSION,
         instruction || 'SameDay',
         batch_identifier,
-        action_date || (Date.today + 5).strftime('%Y%m%d'),
+        (action_date || Date.today + 5).strftime('%Y%m%d'),
         software_vendor_key || '24ade73c-98cf-47b3-99be-cc7b867b3080'
       ]
     end
