@@ -16,8 +16,10 @@ require 'netcash_api/services/xml_key_adapter'
 require 'netcash_api/statement/response'
 
 require 'netcash_api/client'
+require 'netcash_api/client_wrapper'
 require 'netcash_api/validation'
 require 'netcash_api/standard_debit_order'
+require 'netcash_api/partner'
 
 module NetcashApi
   class Error < StandardError; end
