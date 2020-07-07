@@ -61,11 +61,11 @@ def xml_string
 <MethodParameters>
   <request>
    <SoftwareVendorKey>24ade73c-98cf-47b3-99be-cc7b867b3080</SoftwareVendorKey>
-    <MerchantAccount>52624757488</MerchantAccount>
+    <MerchantAccount>123456767</MerchantAccount>
       <ServiceInfoArray>
         <ServiceInfoArray0>
          <ServiceId>1</ServiceId>
-         <ServiceKey>4724c261-dad5-4a64-852c-9b88a67b3c50</ServiceKey>
+         <ServiceKey>1234566778899999999999999</ServiceKey>
         </ServiceInfoArray0>
        </ServiceInfoArray>
   </request>
