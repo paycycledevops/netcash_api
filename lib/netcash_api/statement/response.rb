@@ -8,7 +8,7 @@ module NetcashApi
       end
 
       def rows
-        file.lines.map { |l| l.strip.split('    ') }
+        file.lines.map { |l| l.strip.split(/\t/) }
       end
 
       def records

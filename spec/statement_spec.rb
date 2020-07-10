@@ -1,29 +1,30 @@
-RSpec.describe NetcashApi::StandardDebitOrder do
+RSpec.describe NetcashApi::Statement do
   let(:account_sk) { ENV['ACCOUNT_SERVICE_KEY'] }
+
+  let(:client) { NetcashApi::StandardDebitOrder }
 
   context 'request interim merchant statement' do
     it do
-      VCR.use_cassette 'request_interim_merchant_statement' do
-        response = subject.request_interim_merchant_statement(
-          service_key: account_sk
-        )
-
-        expect(response.body.dig(:request_interim_merchant_statement_response, :request_interim_merchant_statement_result).length).to eq 18
-      end
-    end
-  end
-
-
-  context 'retrieve statement' do
-    it do
-      VCR.use_cassette 'retrieve_merchant_statement' do
-        response = subject.retrieve_merchant_statement(
+      response = VCR.use_cassette 'statement' do
+        client.request_merchant_statement(
           service_key: account_sk,
-          polling_id: '637291584000000000'
+          from_action_date: '20200703'
         )
-
-        expect(response.body.dig(:request_interim_merchant_statement_response, :request_interim_merchant_statement_result).length).to eq 18
       end
+
+      polling_id = response.body.dig(:request_merchant_statement_response, :request_merchant_statement_result)
+
+      statement_result = VCR.use_cassette 'statement2' do
+        client.retrieve_merchant_statement(
+          service_key: account_sk,
+          polling_id: polling_id
+        )
+      end
+
+      statement = statement_result.body.dig(:retrieve_merchant_statement_response, :retrieve_merchant_statement_result)
+      statement_object = NetcashApi::Statement::Response.new(file: statement)
+      expect(statement_object.records.count).to eq 5
+      binding.pry
     end
   end
 

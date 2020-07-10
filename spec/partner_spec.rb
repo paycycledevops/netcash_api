@@ -8,35 +8,54 @@ RSpec.describe NetcashApi::Partner do
         'request' => {
           'SoftwareVendorKey' => software_vendor_key,
           'MerchantAccount' => merchant_account,
-          'ServiceInfoArray' => {
-            'ServiceInfoArray0' => {
+          'ServiceInfoList' => [{
+            'ServiceInfo' => {
               'ServiceKey' => account_sk,
               'ServiceId' => 1
             }
-          }
+          }]
         }
       }
     }
   }
 
   it do
-    VCR.use_cassette 'validate_service_key' do
-      response = NetcashApi::Client.partner.call(:validate_service_key,
-        message: example)
-      binding.pry
+    client = Savon.client(
+      wsdl: 'https://ws.netcash.co.za/NIWS/NIWS_Partner.svc?wsdl',
+      soap_header: { "wsa:Action" => "http://tempuri.org/INIWS_Partner/ValidateServiceKey" }
+    )
+    client = NetcashApi::Client.partner
+    binding.pry
+
+    response = VCR.use_cassette 'validate_service_key' do
+      client.call(:batch_file_upload,
+        service_key: account_sk,
+        file: '')
     end
+    binding.pry
   end
 
   it do
-    VCR.use_cassette 'validate_service_key' do
-      #response = NetcashApi::Partner.validate_service_key(
-      response = NetcashApi::Client.partner.call(:validate_service_key,
+    client = Savon.client(
+      wsdl: 'https://ws.netcash.co.za/NIWS/NIWS_PartnerMobile.svc',
+      soap_header: { "wsa:Action" => "http://tempuri.org/INIWS_Partner/ValidateServiceKey" }
+    )
+
+    response = VCR.use_cassette 'validate_service_key' do
+#     client = NetcashApi::Client.partner
+#     client.globals.soap_header(
+#       "wsa:To" => "https://ws.netcash.co.za/NIWS/NIWS_Partner.svc",
+#       "wsa:Action" => "http://tempuri.org/INIWS_Partner/ValidateServiceKey",
+#     )
+      client = NetcashApi::Client.partner
+
+      client.call(:validate_service_key,
         message: {
           validate_service_key_request: {
             software_vendor_key: software_vendor_key,
             merchant_account: merchant_account,
-            service_info_list_array: {
-              service_info_array_0: {
+            service_info_list: {
+              service_info: {
                 service_key: account_sk,
                 service_id: 1
               }
@@ -44,19 +63,26 @@ RSpec.describe NetcashApi::Partner do
           }
         }
       )
-      binding.pry
     end
+    binding.pry
   end
 
   it do
-    VCR.use_cassette 'validate_service_key_xml' do
-      response = NetcashApi::Client.partner.call(:validate_service_key, xml: xml_string)
-      binding.pry
+    client = NetcashApi::Client.partner
+#   client.globals.soap_header(
+#     "wsa:To" => "https://ws.netcash.co.za/NIWS/NIWS_Partner.svc",
+#     "wsa:Action" => "http://tempuri.org/INIWS_Partner/ValidateServiceKey",
+#   )
+
+    response = VCR.use_cassette 'validate_service_key_xml' do
+      client.call(:validate_service_key,xml: xml_string)
     end
+
+    binding.pry
   end
 end
 
-def xml_string
+def xml_string_1
 '</ValidateServiceKey>
 <MethodParameters>
   <request>
@@ -71,4 +97,19 @@ def xml_string
   </request>
  </MethodParameters>
 </ValidateServiceKey>'
+end
+
+def xml_string
+  '<tem:ValidateServiceKey>
+         <tem:request>
+            <nc:MerchantAccount>510000000000</nc:MerchantAccount>
+            <nc:ServiceInfoList>
+               <nc:ServiceInfo>
+                  <nc:ServiceId>1</nc:ServiceId>
+                  <nc:ServiceKey>00000000-0000-0000-0000-000000000000</nc:ServiceKey>
+               </nc:ServiceInfo>
+            </nc:ServiceInfoList>
+           <nc:SoftwareVendorKey>00000000-0000-0000-0000-000000000000</nc:SoftwareVendorKey>
+         </tem:request>
+      </tem:ValidateServiceKey>'
 end
