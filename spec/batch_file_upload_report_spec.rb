@@ -1,4 +1,5 @@
 RSpec.describe NetcashApi::BatchFileUpload::Report::LoadReport do
+  let(:account_sk) { ENV['DEBIT_ORDER_SERVICE_KEY'] }
   let(:error) { File.read('spec/fixtures/batch_file_report_file_error.txt') }
   let(:failure) { File.read('spec/fixtures/batch_file_report_file_failures.txt') }
   let(:success) { File.read('spec/fixtures/batch_file_report_file_success.txt') }

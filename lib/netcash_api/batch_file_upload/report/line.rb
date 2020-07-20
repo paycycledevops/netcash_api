@@ -18,10 +18,10 @@ module NetcashApi
           file_error = line.scan(/###ERROR: (\S.*$)/)
 
           if file_error.empty?
-            line.scan(/Acc Ref :(\w+) Line :(\d) (\S.*$)/)
-          else
-            file_error
+            return line.scan(/Acc Ref :(\d)/)
           end
+
+          file_error
         end
       end
     end

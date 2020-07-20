@@ -21,17 +21,23 @@ RSpec.describe NetcashApi::Partner do
 
   it do
     client = Savon.client(
-      wsdl: 'https://ws.netcash.co.za/NIWS/NIWS_Partner.svc?wsdl',
-      soap_header: { "wsa:Action" => "http://tempuri.org/INIWS_Partner/ValidateServiceKey" }
+      wsdl: 'https://ws.netcash.co.za/NIWS/NIWS_Partner.svc?singleWsdl',
+      #wsdl: 'https://ws.netcash.co.za/NIWS/NIWS_PartnerMobile.svc?singleWsdl',
     )
-    client = NetcashApi::Client.partner
-    binding.pry
+#   client = NetcashApi::Partner
+#   client = Savon.client(
+#     wsdl: 'https://ws.netcash.co.za/NIWS/NIWS_PartnerMobile.svc?singleWsdl',
+#     soap_header: { "wsa:Action" => "http://tempuri.org/INIWS_Partner/ValidateServiceKey" }
+#   )
 
-    response = VCR.use_cassette 'validate_service_key' do
-      client.call(:batch_file_upload,
-        service_key: account_sk,
-        file: '')
-    end
+    r = client.call(:validate_service_key,
+      soap_action: "http://tempuri.org/INIWS_Partner/ValidateServiceKey",
+      xml: xml_string)
+#      message: { 'ServiceKey' => '1231231231', 'File' => ''})
+
+    #response = VCR.use_cassette 'validate_service_key' do
+      #client.call(:validate_service_key, xml: xml_string)
+    #end
     binding.pry
   end
 
@@ -83,7 +89,7 @@ RSpec.describe NetcashApi::Partner do
 end
 
 def xml_string_1
-'</ValidateServiceKey>
+'
 <MethodParameters>
   <request>
    <SoftwareVendorKey>24ade73c-98cf-47b3-99be-cc7b867b3080</SoftwareVendorKey>
@@ -95,8 +101,7 @@ def xml_string_1
         </ServiceInfoArray0>
        </ServiceInfoArray>
   </request>
- </MethodParameters>
-</ValidateServiceKey>'
+ </MethodParameters>'
 end
 
 def xml_string

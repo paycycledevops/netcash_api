@@ -1,5 +1,5 @@
 RSpec.describe NetcashApi::StandardDebitOrder do
-  let(:account_sk) { ENV['ACCOUNT_SERVICE_KEY'] }
+  let(:account_sk) { ENV['DEBIT_ORDER_SERVICE_KEY'] }
   let(:software_vendor_key) { ENV['SOFTWARE_VENDOR_KEY'] }
 
   let(:transactions) { attributes_for_list :transaction, 5 }
@@ -11,7 +11,7 @@ RSpec.describe NetcashApi::StandardDebitOrder do
       file = NetcashApi::BatchFileUpload::File.new(
         service_key: account_sk,
         software_vendor_key: software_vendor_key,
-        batch_identifier: '123',
+        batch_identifier: '1234',
         transactions: transactions
       ).batch_file
 

@@ -8,7 +8,7 @@ RSpec.describe NetcashApi::Statement do
       response = VCR.use_cassette 'statement' do
         client.request_merchant_statement(
           service_key: account_sk,
-          from_action_date: '20200703'
+          from_action_date: '20200709'
         )
       end
 
@@ -23,8 +23,8 @@ RSpec.describe NetcashApi::Statement do
 
       statement = statement_result.body.dig(:retrieve_merchant_statement_response, :retrieve_merchant_statement_result)
       statement_object = NetcashApi::Statement::Response.new(file: statement)
-      expect(statement_object.records.count).to eq 5
       binding.pry
+      expect(statement_object.records.count).to eq 5
     end
   end
 

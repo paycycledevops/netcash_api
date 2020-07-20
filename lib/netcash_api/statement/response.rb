@@ -13,7 +13,11 @@ module NetcashApi
 
       def records
         rows.map { |r|
-          column_defs.zip(r).to_h
+          h = column_defs.zip(r).to_h
+          description = (h[:description] ||= '').split('- Code: ')
+          h[:amount] = h[:amount].to_f
+          h[:error_code] = description.count > 1 ? description[-1] : nil
+          h
         }
       end
 

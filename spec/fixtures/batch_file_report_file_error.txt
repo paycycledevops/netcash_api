@@ -1,3 +1,5 @@
-###BEGIN MY TEST BATCH UNSUCCESSFUL 01:23 PM R1.00 20160410
-###ERROR: A system error occurred. Please contact Netcash R0.00 20160410
-###END 01:23 PM
+###BEGIN	35	UNSUCCESSFUL	11:21	R30.00	20200718
+Acc Ref :371	Line :4	Duplicate account reference in T (transaction) records	94	JONO:LOCALHOST	
+Acc Ref :379	Line :6	Duplicate account reference in T (transaction) records	95	JONO:LOCALHOST	
+
+###END	11:21
