@@ -1,5 +1,4 @@
-###BEGIN	35	UNSUCCESSFUL	11:21	R30.00	20200718
-Acc Ref :371	Line :4	Duplicate account reference in T (transaction) records	94	JONO:LOCALHOST	
-Acc Ref :379	Line :6	Duplicate account reference in T (transaction) records	95	JONO:LOCALHOST	
+###BEGIN	84	UNSUCCESSFUL	16:52	R12568.20	20200922
+###ERROR: Action date is not valid for this instruction	R12568.20	20200922
 
-###END	11:21
+###END 16:52

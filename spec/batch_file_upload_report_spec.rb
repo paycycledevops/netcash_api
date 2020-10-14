@@ -12,7 +12,7 @@ RSpec.describe NetcashApi::BatchFileUpload::Report::LoadReport do
       expect(load_report.failed?).to be true
       expect(load_report.errors.count).to be 1
       expect(load_report.errors[0].id).to be nil
-      expect(load_report.errors[0].message).to eq 'A system error occurred. Please contact Netcash R0.00 20160410'
+      expect(load_report.errors[0].message).to eq 'Action date is not valid for this instruction'
     end
   end
 
@@ -21,11 +21,10 @@ RSpec.describe NetcashApi::BatchFileUpload::Report::LoadReport do
 
     it do
       expect(load_report.success?).to be false
-      expect(load_report.success_with_errors?).to be true
-      expect(load_report.errors.count).to be 4
-      expect(load_report.errors[0].id).to eq 'XI5'
-      expect(load_report.errors[0].line_number).to eq '3'
-      expect(load_report.errors[0].message).to eq 'Account details could not be validated. Please check the fields Bank account type, Branch code and Account number.'
+      expect(load_report.successful_with_errors?).to be true
+      expect(load_report.errors.count).to be 1
+      expect(load_report.errors[0].id).to eq '78492'
+      expect(load_report.errors[0].message).to eq 'Duplicate account reference in T (transaction) records'
     end
   end
 
@@ -34,7 +33,7 @@ RSpec.describe NetcashApi::BatchFileUpload::Report::LoadReport do
 
     it do
       expect(load_report.success?).to be true
-      expect(load_report.success_with_errors?).to be false
+      expect(load_report.successful_with_errors?).to be false
       expect(load_report.failed?).to be false
       expect(load_report.errors).to eq []
     end

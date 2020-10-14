@@ -7,22 +7,11 @@ module NetcashApi
         end
 
         def id
-          return nil if file_error?
           @line_parts[0]
         end
 
-        def line_number
-          return nil if file_error?
-          @line_parts[1]
-        end
-
         def message
-          @line_parts[-1]
-        end
-
-        private
-        def file_error?
-          @line_parts.count <= 2
+          @line_parts[1]
         end
       end
     end

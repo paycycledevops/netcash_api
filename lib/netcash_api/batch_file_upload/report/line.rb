@@ -9,19 +9,20 @@ module NetcashApi
         end
 
         def error
-          return nil if line_parts.empty?
-          Error.new(line_parts: line_parts[0])
+          return nil if line_parts.blank?
+          Error.new(line_parts: line_parts)
         end
 
         private
         def line_parts
-          file_error = line.scan(/###ERROR: (\S.*$)/)
+          parts = line.split("\t")
 
-          if file_error.empty?
-            return line.scan(/Acc Ref :(\d)/)
+          case
+          when parts[0].start_with?('Acc Ref :')
+            [parts[3], parts[2]]
+          when parts[0].start_with?('###ERROR')
+            [nil, parts[0].scan(/###ERROR: (\S.*$)/)[0][0]]
           end
-
-          file_error
         end
       end
     end
